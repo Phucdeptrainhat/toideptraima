@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: 'Arial', sans-serif;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #FF9933;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .content-container {
+        display: flex;
+        flex: 1;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .chart-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .section-title {
+        font-size: 28px;
+        color: #FF5722;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .info-item {
+        margin-bottom: 15px;
+      }
+      .info-item i {
+        color: #FF9933;
+        margin-right: 10px;
+      }
+      .chart-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333333;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="title">Vệ sinh an toàn thực phẩm</h1>
+      </div>
+      
+      <div class="content-container">
+        <div class="text-content">
+          <h2 class="section-title">Vệ sinh cá nhân</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-hand-sparkles"></i> Rửa tay sạch sẽ trước khi chế biến và sau khi tiếp xúc với thực phẩm sống</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-user-tie"></i> Mặc đồng phục sạch sẽ, đầu tóc gọn gàng, đeo khẩu trang và găng tay khi chế biến</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-cut"></i> Móng tay cắt ngắn, không đeo trang sức khi làm việc</p>
+          </div>
+          
+          <h2 class="section-title">Vệ sinh khu vực làm việc</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-broom"></i> Lau dọn quầy hàng, khu vực chế biến trước, trong và sau ca làm việc</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-utensils"></i> Vệ sinh dụng cụ, thiết bị sau mỗi lần sử dụng</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-trash"></i> Thu gom rác thải thường xuyên, phân loại đúng quy định</p>
+          </div>
+          
+          <h2 class="section-title">Bảo quản thực phẩm</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-temperature-low"></i> Bảo quản nguyên liệu ở nhiệt độ phù hợp</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-sort-amount-down"></i> Áp dụng nguyên tắc FIFO (First In, First Out) - Nhập trước xuất trước</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-box"></i> Đóng gói, bảo quản riêng biệt các loại nguyên liệu</p>
+          </div>
+        </div>
+        
+        <div class="chart-container">
+          <div style="width: 500px; height: 300px; margin-bottom: 40px;">
+            <h3 class="chart-title">Tần suất vệ sinh trong ngày</h3>
+            <canvas id="cleaningChart"></canvas>
+          </div>
+          
+          <div style="width: 500px; height: 300px;">
+            <h3 class="chart-title">Nhiệt độ bảo quản nguyên liệu</h3>
+            <canvas id="tempChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Biểu đồ tần suất vệ sinh
+      const ctxCleaning = document.getElementById('cleaningChart').getContext('2d');
+      const cleaningChart = new Chart(ctxCleaning, {
+        type: 'bar',
+        data: {
+          labels: ['Rửa tay', 'Lau quầy', 'Vệ sinh dụng cụ', 'Thu gom rác', 'Lau sàn'],
+          datasets: [{
+            label: 'Số lần/ngày',
+            data: [20, 10, 15, 8, 3],
+            backgroundColor: '#FF9933',
+            borderColor: '#FF5722',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Số lần/ngày'
+              }
+            }
+          }
+        }
+      });
+      
+      // Biểu đồ nhiệt độ bảo quản
+      const ctxTemp = document.getElementById('tempChart').getContext('2d');
+      const tempChart = new Chart(ctxTemp, {
+        type: 'bar',
+        data: {
+          labels: ['Thịt heo lu', 'Rau sống', 'Đồ chua', 'Nước sốt', 'Bánh mì'],
+          datasets: [{
+            label: 'Nhiệt độ (°C)',
+            data: [4, 8, 6, 5, 25],
+            backgroundColor: '#FF5722',
+            borderColor: '#FF9933',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Nhiệt độ (°C)'
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

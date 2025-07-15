@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: 'Arial', sans-serif;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #FF9933;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .content-container {
+        display: flex;
+        flex: 1;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .visual-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .section-title {
+        font-size: 28px;
+        color: #FF5722;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .rule-item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+      }
+      .rule-item i {
+        color: #FF9933;
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+      .chart-container {
+        width: 500px;
+        height: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="title">Nội quy cửa hàng</h1>
+      </div>
+      
+      <div class="content-container">
+        <div class="text-content">
+          <h2 class="section-title">Quy định chung</h2>
+          <div class="rule-item">
+            <i class="fas fa-gavel"></i>
+            <p class="text-xl">Nội quy áp dụng cho tất cả nhân viên làm việc tại cửa hàng Bánh mì Heo lu giòn tan.</p>
+          </div>
+          
+          <h2 class="section-title">Giờ giấc làm việc</h2>
+          <div class="rule-item">
+            <i class="fas fa-clock"></i>
+            <p class="text-xl">Có mặt đúng giờ theo lịch phân công, không đi muộn, về sớm.</p>
+          </div>
+          <div class="rule-item">
+            <i class="fas fa-calendar-alt"></i>
+            <p class="text-xl">Thông báo trước 24 giờ nếu cần nghỉ hoặc đổi ca.</p>
+          </div>
+          
+          <h2 class="section-title">Trang phục và tác phong</h2>
+          <div class="rule-item">
+            <i class="fas fa-tshirt"></i>
+            <p class="text-xl">Mặc đồng phục sạch sẽ, gọn gàng trong suốt ca làm việc.</p>
+          </div>
+          <div class="rule-item">
+            <i class="fas fa-cut"></i>
+            <p class="text-xl">Đầu tóc gọn gàng, móng tay cắt ngắn, không đeo trang sức rườm rà.</p>
+          </div>
+          
+          <h2 class="section-title">Phục vụ khách hàng</h2>
+          <div class="rule-item">
+            <i class="fas fa-smile"></i>
+            <p class="text-xl">Luôn chào đón khách hàng bằng thái độ nhiệt tình, thân thiện.</p>
+          </div>
+          <div class="rule-item">
+            <i class="fas fa-headset"></i>
+            <p class="text-xl">Lắng nghe và đáp ứng yêu cầu của khách hàng nhanh chóng, chính xác.</p>
+          </div>
+        </div>
+        
+        <div class="visual-content">
+          <div class="chart-container">
+            <canvas id="violationChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Biểu đồ mức độ nghiêm trọng của vi phạm nội quy
+      const ctx = document.getElementById('violationChart').getContext('2d');
+      const violationChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Đi muộn', 'Không mặc đồng phục', 'Vệ sinh kém', 'Thái độ không tốt', 'Sử dụng điện thoại'],
+          datasets: [{
+            label: 'Mức độ nghiêm trọng',
+            data: [3, 4, 5, 5, 2],
+            backgroundColor: '#FF9933',
+            borderColor: '#FF5722',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 5,
+              title: {
+                display: true,
+                text: 'Mức độ nghiêm trọng (1-5)',
+                font: {
+                  size: 14
+                }
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Loại vi phạm',
+                font: {
+                  size: 14
+                }
+              }
+            }
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: 'Mức độ nghiêm trọng của các vi phạm nội quy',
+              font: {
+                size: 16
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

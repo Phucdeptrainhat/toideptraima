@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: 'Arial', sans-serif;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #FF9933;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .content-container {
+        display: flex;
+        flex: 1;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .image-container img {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .section-title {
+        font-size: 28px;
+        color: #FF5722;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .process-item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      .process-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #FF9933;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+      .process-text {
+        flex: 1;
+      }
+      .workflow-chart {
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="title">Quy trình vận hành cửa hàng</h1>
+      </div>
+      
+      <div class="content-container">
+        <div class="text-content">
+          <h2 class="section-title">Chuẩn bị trước giờ mở cửa</h2>
+          <div class="process-item">
+            <div class="process-icon">1</div>
+            <div class="process-text">
+              <p class="text-xl">Kiểm tra nguyên vật liệu (bánh mì, thịt heo lu, rau sống, đồ chua)</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">2</div>
+            <div class="process-text">
+              <p class="text-xl">Vệ sinh khu vực bán hàng và chế biến</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">3</div>
+            <div class="process-text">
+              <p class="text-xl">Sắp xếp và trưng bày nguyên liệu</p>
+            </div>
+          </div>
+          
+          <h2 class="section-title">Quy trình phục vụ</h2>
+          <div class="process-item">
+            <div class="process-icon">1</div>
+            <div class="process-text">
+              <p class="text-xl">Tiếp nhận yêu cầu khách hàng</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">2</div>
+            <div class="process-text">
+              <p class="text-xl">Chế biến bánh mì theo yêu cầu</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">3</div>
+            <div class="process-text">
+              <p class="text-xl">Đóng gói và thanh toán</p>
+            </div>
+          </div>
+          
+          <h2 class="section-title">Kết thúc ca làm việc</h2>
+          <div class="process-item">
+            <div class="process-icon">1</div>
+            <div class="process-text">
+              <p class="text-xl">Vệ sinh tổng thể cửa hàng</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">2</div>
+            <div class="process-text">
+              <p class="text-xl">Kiểm kê hàng hóa và báo cáo doanh thu</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-container">
+          <img src="/home/ubuntu/presentation/quy_trinh_banh_mi.jpg" alt="Quy trình vận hành cửa hàng">
+          
+          <div class="workflow-chart">
+            <canvas id="workflowChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Biểu đồ phân bổ thời gian cho các quy trình
+      const ctx = document.getElementById('workflowChart').getContext('2d');
+      const workflowChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Chuẩn bị', 'Phục vụ', 'Vệ sinh trong ca', 'Kết thúc ca'],
+          datasets: [{
+            label: 'Thời gian (phút)',
+            data: [60, 120, 30, 45],
+            backgroundColor: [
+              '#FF9933',
+              '#FF5722',
+              '#FF9933',
+              '#FF5722'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: 'Phân bổ thời gian cho các quy trình',
+              font: {
+                size: 16
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Thời gian (phút)'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Quy trình'
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

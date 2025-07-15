@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: 'Arial', sans-serif;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #FF9933;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .content-container {
+        display: flex;
+        flex: 1;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .image-container img {
+        width: 500px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .section-title {
+        font-size: 28px;
+        color: #FF5722;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .info-item {
+        margin-bottom: 15px;
+      }
+      .info-item i {
+        color: #FF9933;
+        margin-right: 10px;
+      }
+      .skill-chart {
+        width: 500px;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="title">Kỹ năng phục vụ khách hàng</h1>
+      </div>
+      
+      <div class="content-container">
+        <div class="text-content">
+          <h2 class="section-title">Thái độ phục vụ</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-smile"></i> Luôn tươi cười, thân thiện với khách hàng</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-comments"></i> Sử dụng ngôn ngữ lịch sự, tôn trọng</p>
+          </div>
+          
+          <h2 class="section-title">Tiếp nhận và xử lý đơn hàng</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-headphones"></i> Lắng nghe cẩn thận yêu cầu của khách</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-clipboard-check"></i> Xác nhận lại đơn hàng để tránh sai sót</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-lightbulb"></i> Gợi ý sản phẩm phù hợp khi khách cần tư vấn</p>
+          </div>
+          
+          <h2 class="section-title">Xử lý tình huống</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-exclamation-circle"></i> Giải quyết khiếu nại với thái độ bình tĩnh</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-sync-alt"></i> Sẵn sàng thay đổi sản phẩm nếu khách không hài lòng</p>
+          </div>
+          
+          <h2 class="section-title">Thanh toán</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-cash-register"></i> Thực hiện thanh toán nhanh chóng, chính xác</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-hand-holding-usd"></i> Trả lại tiền thừa đầy đủ, rõ ràng</p>
+          </div>
+        </div>
+        
+        <div class="image-container">
+          <img src="/home/ubuntu/presentation/nhan_vien_ban_hang.jpg" alt="Nhân viên phục vụ khách hàng">
+          
+          <div class="skill-chart">
+            <canvas id="customerServiceChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Biểu đồ đánh giá tầm quan trọng của các kỹ năng phục vụ
+      const ctx = document.getElementById('customerServiceChart').getContext('2d');
+      const customerServiceChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Thái độ thân thiện', 'Giao tiếp', 'Xử lý đơn hàng', 'Giải quyết vấn đề', 'Thanh toán nhanh', 'Vệ sinh'],
+          datasets: [{
+            label: 'Mức độ quan trọng',
+            data: [95, 90, 85, 80, 75, 90],
+            backgroundColor: 'rgba(255, 153, 51, 0.2)',
+            borderColor: '#FF9933',
+            borderWidth: 2,
+            pointBackgroundColor: '#FF5722'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: {
+                display: true
+              },
+              suggestedMin: 50,
+              suggestedMax: 100
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom'
+            },
+            title: {
+              display: true,
+              text: 'Tầm quan trọng của kỹ năng phục vụ',
+              font: {
+                size: 16
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

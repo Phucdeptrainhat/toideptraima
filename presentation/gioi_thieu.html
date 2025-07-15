@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: 'Arial', sans-serif;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #FF9933;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .content-container {
+        display: flex;
+        flex: 1;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .image-container img {
+        width: 500px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .section-title {
+        font-size: 28px;
+        color: #FF5722;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .info-item {
+        margin-bottom: 20px;
+      }
+      .info-item i {
+        color: #FF9933;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="title">Giới thiệu về cửa hàng</h1>
+      </div>
+      
+      <div class="content-container">
+        <div class="text-content">
+          <h2 class="section-title">Tầm nhìn</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-bullseye"></i> Trở thành thương hiệu bánh mì heo lu giòn tan hàng đầu, được yêu thích bởi hương vị đặc trưng và chất lượng dịch vụ.</p>
+          </div>
+          
+          <h2 class="section-title">Sứ mệnh</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-star"></i> Mang đến cho khách hàng những ổ bánh mì heo lu thơm ngon, giòn tan với nguyên liệu tươi ngon và chất lượng cao.</p>
+          </div>
+          
+          <h2 class="section-title">Giá trị cốt lõi</h2>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-check-circle"></i> Chất lượng: Luôn đảm bảo nguyên liệu tươi ngon nhất</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-check-circle"></i> Dịch vụ: Phục vụ nhanh chóng, thân thiện</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-check-circle"></i> Sạch sẽ: Đảm bảo vệ sinh an toàn thực phẩm</p>
+          </div>
+          <div class="info-item">
+            <p class="text-xl"><i class="fas fa-check-circle"></i> Đổi mới: Không ngừng cải tiến công thức và dịch vụ</p>
+          </div>
+        </div>
+        
+        <div class="image-container">
+          <img src="/home/ubuntu/presentation/cua_hang_banh_mi.jpg" alt="Cửa hàng Bánh mì Heo lu giòn tan">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

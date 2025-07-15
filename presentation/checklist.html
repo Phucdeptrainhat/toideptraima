@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        font-family: 'Arial', sans-serif;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #FF9933;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .content-container {
+        display: flex;
+        flex: 1;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .chart-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .section-title {
+        font-size: 28px;
+        color: #FF5722;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .checklist-item {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+      }
+      .checklist-item i {
+        color: #FF9933;
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      .checklist-phase {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="title">Checklist công việc hàng ngày</h1>
+      </div>
+      
+      <div class="content-container">
+        <div class="text-content">
+          <div class="checklist-phase">
+            <h2 class="section-title">Đầu ca (Trước giờ mở cửa)</h2>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Vệ sinh quầy bán hàng, khu vực chế biến</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Kiểm tra số lượng và chất lượng nguyên liệu</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Sắp xếp nguyên liệu gọn gàng, dễ lấy</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Kiểm tra hệ thống điện, nước, thiết bị</p>
+            </div>
+          </div>
+          
+          <div class="checklist-phase">
+            <h2 class="section-title">Trong ca (Trong giờ hoạt động)</h2>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Phục vụ khách hàng nhanh chóng, thân thiện</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Vệ sinh liên tục sau mỗi lần phục vụ</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Bổ sung nguyên liệu kịp thời</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Giữ gìn khu vực khách hàng sạch sẽ</p>
+            </div>
+          </div>
+          
+          <div class="checklist-phase">
+            <h2 class="section-title">Cuối ca (Sau giờ đóng cửa)</h2>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Vệ sinh tổng thể cửa hàng</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Kiểm kê nguyên vật liệu tồn kho</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Tổng kết doanh thu, báo cáo quản lý</p>
+            </div>
+            <div class="checklist-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p class="text-xl">Tắt thiết bị, đảm bảo an ninh cửa hàng</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chart-container">
+          <div style="height: 400px; width: 500px;">
+            <canvas id="taskDistributionChart"></canvas>
+          </div>
+          
+          <div style="height: 250px; width: 500px; margin-top: 20px;">
+            <canvas id="taskCompletionChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Biểu đồ phân bổ công việc theo ca
+      const ctx1 = document.getElementById('taskDistributionChart').getContext('2d');
+      const taskDistributionChart = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['Đầu ca', 'Trong ca', 'Cuối ca'],
+          datasets: [{
+            label: 'Số lượng công việc',
+            data: [12, 15, 10],
+            backgroundColor: [
+              '#FF9933',
+              '#FF5722',
+              '#333333'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: 'Phân bổ công việc theo ca',
+              font: {
+                size: 18
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Số lượng công việc'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Ca làm việc'
+              }
+            }
+          }
+        }
+      });
+      
+      // Biểu đồ tỷ lệ hoàn thành công việc
+      const ctx2 = document.getElementById('taskCompletionChart').getContext('2d');
+      const taskCompletionChart = new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+          labels: ['Đã hoàn thành', 'Chưa hoàn thành'],
+          datasets: [{
+            label: 'Tỷ lệ hoàn thành',
+            data: [85, 15],
+            backgroundColor: [
+              '#FF9933',
+              '#DDDDDD'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            },
+            title: {
+              display: true,
+              text: 'Tỷ lệ hoàn thành công việc',
+              font: {
+                size: 18
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
