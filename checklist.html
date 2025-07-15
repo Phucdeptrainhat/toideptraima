@@ -1,257 +1,111 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checklist công việc hàng ngày - Bánh mì Heo lu giòn tan</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <i class="fas fa-bread-slice text-2xl text-orange-500 mr-3"></i>
-                        <h1 class="text-xl font-bold text-gray-800">Bánh mì Heo lu giòn tan</h1>
-                    </a>
-                </div>
-                <a href="index.html" class="text-orange-500 hover:text-orange-600">
-                    <i class="fas fa-arrow-left mr-2"></i>Quay lại
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Content -->
-    <div class="max-w-4xl mx-auto px-4 py-8">
-        <div class="bg-white rounded-lg shadow-lg p-8">
-            <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-gray-800 mb-4">Checklist công việc hàng ngày</h1>
-                <p class="text-gray-600">Danh sách kiểm tra công việc cần thực hiện trong mỗi ca làm việc</p>
-            </div>
-
-            <div class="space-y-8">
-                <section>
-                    <h2 class="text-2xl font-semibold text-green-600 mb-4 flex items-center">
-                        <i class="fas fa-sun mr-3"></i>1. Đầu ca (Trước giờ mở cửa)
-                    </h2>
-                    <div class="bg-green-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-4 text-green-700">Vệ sinh:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Lau dọn quầy bán hàng, khu vực chế biến, bàn ghế khách hàng.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Vệ sinh dụng cụ, thiết bị (dao, thớt, kẹp, lò nướng).</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Đổ rác, thay túi rác mới.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-green-700">Kiểm tra nguyên vật liệu:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra số lượng và chất lượng bánh mì.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra số lượng và chất lượng thịt heo lu.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra số lượng và chất lượng rau sống (dưa chuột, rau mùi, ớt).</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra số lượng và chất lượng đồ chua (đu đủ, cà rốt).</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra số lượng và chất lượng pate, chả lụa.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra số lượng và chất lượng nước sốt.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Bổ sung nguyên liệu nếu thiếu.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-green-700">Sắp xếp và trưng bày:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Sắp xếp nguyên liệu gọn gàng, ngăn nắp, dễ lấy.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Trưng bày sản phẩm đẹp mắt, hấp dẫn.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-green-700">Kiểm tra hệ thống:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra hệ thống điện, nước, đèn chiếu sáng.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra máy tính tiền, máy in hóa đơn.</span>
-                            </label>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
-                        <i class="fas fa-clock mr-3"></i>2. Trong ca (Trong giờ hoạt động)
-                    </h2>
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-4 text-blue-700">Phục vụ khách hàng:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Chào hỏi khách hàng thân thiện, niềm nở.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Lắng nghe yêu cầu của khách hàng.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Chế biến bánh mì nhanh chóng, đúng yêu cầu.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Đóng gói sản phẩm cẩn thận, sạch sẽ.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Thực hiện thanh toán chính xác, nhanh gọn.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Cảm ơn khách hàng.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-blue-700">Vệ sinh duy trì:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Lau dọn quầy hàng, khu vực chế biến ngay sau khi phục vụ.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Thu gom rác thải phát sinh.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Giữ gìn khu vực khách hàng luôn sạch sẽ.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-blue-700">Kiểm tra và bổ sung:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm tra và bổ sung nguyên liệu kịp thời.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 rounded">
-                                <span class="ml-3 text-gray-700">Đảm bảo nguyên liệu luôn tươi mới, đạt chuẩn.</span>
-                            </label>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-purple-600 mb-4 flex items-center">
-                        <i class="fas fa-moon mr-3"></i>3. Cuối ca (Sau giờ đóng cửa)
-                    </h2>
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-4 text-purple-700">Vệ sinh tổng thể:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Vệ sinh toàn bộ khu vực bán hàng, chế biến, kho lưu trữ.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Rửa sạch, tiệt trùng và sắp xếp dụng cụ, thiết bị.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Lau sàn, vệ sinh kính.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-purple-700">Kiểm kê và báo cáo:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Kiểm kê số lượng nguyên vật liệu tồn kho.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Ghi chép số liệu vào sổ sách/hệ thống.</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Tổng kết doanh thu, báo cáo cho quản lý.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-purple-700">Tắt thiết bị:</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Tắt tất cả các thiết bị điện không cần thiết (đèn, quạt, lò nướng).</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Khóa cửa, đảm bảo an ninh cửa hàng.</span>
-                            </label>
-                        </div>
-
-                        <h3 class="text-lg font-semibold mb-4 mt-6 text-purple-700">Bàn giao ca (nếu có):</h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 rounded">
-                                <span class="ml-3 text-gray-700">Bàn giao công việc, tình hình cửa hàng cho ca tiếp theo (nếu có).</span>
-                            </label>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="mt-8 text-center">
-                <button onclick="printChecklist()" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300 mr-4">
-                    <i class="fas fa-print mr-2"></i>In checklist
-                </button>
-                <a href="index.html" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition duration-300">
-                    <i class="fas fa-arrow-left mr-2"></i>Quay lại trang chủ
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function printChecklist() {
-            window.print();
-        }
-    </script>
-</body>
-</html>
-
+<h1 id="checklist-công-việc-hàng-ngày">Checklist công việc hàng ngày</h1>
+<h2 id="đầu-ca-trước-giờ-mở-cửa">1. Đầu ca (Trước giờ mở cửa)</h2>
+<ul>
+<li><strong>Vệ sinh:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Lau dọn quầy bán hàng, khu vực chế biến, bàn ghế khách hàng.</li>
+<li><input type="checkbox" disabled="" />
+Vệ sinh dụng cụ, thiết bị (dao, thớt, kẹp, lò nướng).</li>
+<li><input type="checkbox" disabled="" />
+Đổ rác, thay túi rác mới.</li>
+</ul></li>
+<li><strong>Kiểm tra nguyên vật liệu:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Kiểm tra số lượng và chất lượng bánh mì.</li>
+<li><input type="checkbox" disabled="" />
+Kiểm tra số lượng và chất lượng thịt heo lu.</li>
+<li><input type="checkbox" disabled="" />
+Kiểm tra số lượng và chất lượng rau sống (dưa chuột, rau mùi, ớt).</li>
+<li><input type="checkbox" disabled="" />
+Kiểm tra số lượng và chất lượng đồ chua (đu đủ, cà rốt).</li>
+<li><input type="checkbox" disabled="" />
+Kiểm tra số lượng và chất lượng pate, chả lụa.</li>
+<li><input type="checkbox" disabled="" />
+Kiểm tra số lượng và chất lượng nước sốt.</li>
+<li><input type="checkbox" disabled="" />
+Bổ sung nguyên liệu nếu thiếu.</li>
+</ul></li>
+<li><strong>Sắp xếp và trưng bày:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Sắp xếp nguyên liệu gọn gàng, ngăn nắp, dễ lấy.</li>
+<li><input type="checkbox" disabled="" />
+Trưng bày sản phẩm đẹp mắt, hấp dẫn.</li>
+</ul></li>
+<li><strong>Kiểm tra hệ thống:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Kiểm tra hệ thống điện, nước, đèn chiếu sáng.</li>
+<li><input type="checkbox" disabled="" />
+Kiểm tra máy tính tiền, máy in hóa đơn.</li>
+</ul></li>
+</ul>
+<h2 id="trong-ca-trong-giờ-hoạt-động">2. Trong ca (Trong giờ hoạt động)</h2>
+<ul>
+<li><strong>Phục vụ khách hàng:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Chào hỏi khách hàng thân thiện, niềm nở.</li>
+<li><input type="checkbox" disabled="" />
+Lắng nghe yêu cầu của khách hàng.</li>
+<li><input type="checkbox" disabled="" />
+Chế biến bánh mì nhanh chóng, đúng yêu cầu.</li>
+<li><input type="checkbox" disabled="" />
+Đóng gói sản phẩm cẩn thận, sạch sẽ.</li>
+<li><input type="checkbox" disabled="" />
+Thực hiện thanh toán chính xác, nhanh gọn.</li>
+<li><input type="checkbox" disabled="" />
+Cảm ơn khách hàng.</li>
+</ul></li>
+<li><strong>Vệ sinh duy trì:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Lau dọn quầy hàng, khu vực chế biến ngay sau khi phục vụ.</li>
+<li><input type="checkbox" disabled="" />
+Thu gom rác thải phát sinh.</li>
+<li><input type="checkbox" disabled="" />
+Giữ gìn khu vực khách hàng luôn sạch sẽ.</li>
+</ul></li>
+<li><strong>Kiểm tra và bổ sung:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Kiểm tra và bổ sung nguyên liệu kịp thời.</li>
+<li><input type="checkbox" disabled="" />
+Đảm bảo nguyên liệu luôn tươi mới, đạt chuẩn.</li>
+</ul></li>
+</ul>
+<h2 id="cuối-ca-sau-giờ-đóng-cửa">3. Cuối ca (Sau giờ đóng cửa)</h2>
+<ul>
+<li><strong>Vệ sinh tổng thể:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Vệ sinh toàn bộ khu vực bán hàng, chế biến, kho lưu trữ.</li>
+<li><input type="checkbox" disabled="" />
+Rửa sạch, tiệt trùng và sắp xếp dụng cụ, thiết bị.</li>
+<li><input type="checkbox" disabled="" />
+Lau sàn, vệ sinh kính.</li>
+</ul></li>
+<li><strong>Kiểm kê và báo cáo:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Kiểm kê số lượng nguyên vật liệu tồn kho.</li>
+<li><input type="checkbox" disabled="" />
+Ghi chép số liệu vào sổ sách/hệ thống.</li>
+<li><input type="checkbox" disabled="" />
+Tổng kết doanh thu, báo cáo cho quản lý.</li>
+</ul></li>
+<li><strong>Tắt thiết bị:</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Tắt tất cả các thiết bị điện không cần thiết (đèn, quạt, lò nướng).</li>
+<li><input type="checkbox" disabled="" />
+Khóa cửa, đảm bảo an ninh cửa hàng.</li>
+</ul></li>
+<li><strong>Bàn giao ca (nếu có):</strong>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Bàn giao công việc, tình hình cửa hàng cho ca tiếp theo (nếu có).</li>
+</ul></li>
+</ul>
