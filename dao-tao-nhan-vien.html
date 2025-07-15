@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đào tạo nhân viên - Cửa hàng Bánh mì Heo lu giòn tan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FF9933 0%, #FF5722 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .slide {
+            padding: 40px;
+            min-height: 600px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .slide:last-child {
+            border-bottom: none;
+        }
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FF5722;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .slide-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .slide-content h2 {
+            color: #FF9933;
+            font-size: 1.8rem;
+            margin: 30px 0 20px 0;
+        }
+        .slide-content h3 {
+            color: #FF5722;
+            font-size: 1.4rem;
+            margin: 20px 0 15px 0;
+        }
+        .slide-content ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        .slide-content li {
+            margin: 10px 0;
+        }
+        .highlight-box {
+            background: #FFF3E0;
+            border-left: 5px solid #FF9933;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .action-step {
+            background: #E8F5E8;
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .speech-bubble {
+            background: #E3F2FD;
+            border: 2px solid #2196F3;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 20px;
+            position: relative;
+        }
+        .speech-bubble:before {
+            content: "💬";
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            font-size: 1.5rem;
+        }
+        .no-download {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Trang bìa -->
+        <div class="slide">
+            <div class="slide-title">ĐÀO TẠO NHÂN VIÊN</div>
+            <div class="text-center">
+                <h2 class="text-2xl text-gray-600 mb-8">Cửa hàng Bánh mì Heo lu giòn tan</h2>
+                <div class="bg-orange-100 p-6 rounded-lg inline-block">
+                    <p class="text-lg text-orange-800">Hướng dẫn quy trình, tiêu chuẩn và kỹ năng phục vụ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Giới thiệu về cửa hàng -->
+        <div class="slide">
+            <div class="slide-title">Giới thiệu về cửa hàng</div>
+            <div class="slide-content">
+                <div class="highlight-box">
+                    <h3>🎯 Tầm nhìn</h3>
+                    <p>Trở thành thương hiệu bánh mì heo lu giòn tan hàng đầu, được yêu thích bởi hương vị đặc trưng và chất lượng dịch vụ.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>🌟 Sứ mệnh</h3>
+                    <p>Mang đến cho khách hàng những ổ bánh mì heo lu thơm ngon, giòn tan với nguyên liệu tươi ngon và chất lượng phục vụ tận tâm.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>💎 Giá trị cốt lõi</h3>
+                    <ul>
+                        <li><strong>Chất lượng:</strong> Nguyên liệu tươi ngon, quy trình chế biến chuẩn</li>
+                        <li><strong>Tận tâm:</strong> Phục vụ khách hàng với thái độ nhiệt tình, chu đáo</li>
+                        <li><strong>Uy tín:</strong> Đảm bảo vệ sinh an toàn thực phẩm</li>
+                        <li><strong>Sáng tạo:</strong> Không ngừng cải tiến hương vị và dịch vụ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Kiến thức sản phẩm -->
+        <div class="slide">
+            <div class="slide-title">Kiến thức sản phẩm</div>
+            <div class="slide-content">
+                <h2>🥖 Sản phẩm chính: Bánh mì Heo lu giòn tan</h2>
+                
+                <h3>Nguyên liệu chính:</h3>
+                <ul>
+                    <li><strong>Bánh mì:</strong> Bánh mì Việt Nam truyền thống, vỏ giòn, ruột mềm</li>
+                    <li><strong>Thịt heo lu:</strong> Thịt heo nướng lu theo công thức đặc biệt</li>
+                    <li><strong>Rau sống:</strong> Dưa chuột, rau mùi, ớt tươi</li>
+                    <li><strong>Đồ chua:</strong> Đu đủ, cà rốt chua ngọt</li>
+                    <li><strong>Pate:</strong> Pate gan heo thơm ngon</li>
+                    <li><strong>Nước sốt:</strong> Nước sốt đặc trưng của cửa hàng</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h3>🔥 Điểm đặc biệt</h3>
+                    <p>Thịt heo lu được nướng theo công thức bí truyền, tạo nên lớp vỏ giòn tan, thịt bên trong mềm ngọt, thấm đẫm gia vị.</p>
+                </div>
+
+                <h3>Giá bán:</h3>
+                <ul>
+                    <li>Bánh mì heo lu thường: 25.000 VNĐ</li>
+                    <li>Bánh mì heo lu đặc biệt: 30.000 VNĐ</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Quy trình vận hành -->
+        <div class="slide">
+            <div class="slide-title">Quy trình vận hành cửa hàng</div>
+            <div class="slide-content">
+                <h2>🌅 1. Chuẩn bị trước giờ mở cửa</h2>
+                <ul>
+                    <li>Kiểm tra nguyên vật liệu và chất lượng</li>
+                    <li>Vệ sinh khu vực bán hàng và chế biến</li>
+                    <li>Sắp xếp và trưng bày nguyên liệu</li>
+                    <li>Kiểm tra hệ thống điện, nước</li>
+                </ul>
+
+                <h2>🍽️ 2. Quy trình chế biến và phục vụ</h2>
+                <div class="action-step">
+                    <h3>Bước 1: Chào khách hàng</h3>
+                    <p><strong>2 hành động:</strong></p>
+                    <ul>
+                        <li>Mở to mắt nhìn về phía khách</li>
+                        <li>Miệng cười để lộ 4 răng cửa</li>
+                    </ul>
+                    <div class="speech-bubble">
+                        <p><strong>2 câu nói:</strong></p>
+                        <p>"Em chào anh/chị ạ. Anh/chị mua bánh 25k hay 30k ạ?"</p>
+                    </div>
+                </div>
+
+                <div class="action-step">
+                    <h3>Bước 2: Tiếp nhận đơn hàng</h3>
+                    <p><strong>3 hành động:</strong></p>
+                    <ul>
+                        <li>Gật đầu xác nhận</li>
+                        <li>Lấy bánh mì từ giỏ</li>
+                        <li>Đặt bánh lên bàn chuẩn bị</li>
+                    </ul>
+                    <div class="speech-bubble">
+                        <p><strong>1 câu nói:</strong></p>
+                        <p>"Dạ, em làm ngay cho anh/chị ạ!"</p>
+                    </div>
+                </div>
+
+                <h2>🧹 3. Vệ sinh trong ca làm việc</h2>
+                <ul>
+                    <li>Lau dọn quầy hàng liên tục</li>
+                    <li>Thu gom rác thải thường xuyên</li>
+                    <li>Bổ sung nguyên liệu kịp thời</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: Checklist công việc hàng ngày -->
+        <div class="slide">
+            <div class="slide-title">Checklist công việc hàng ngày</div>
+            <div class="slide-content">
+                <h2>📋 Ca sáng (6:00 - 14:00)</h2>
+                <div class="highlight-box">
+                    <h3>Trước khi mở cửa:</h3>
+                    <ul>
+                        <li>☐ Kiểm tra nguyên liệu (bánh mì, thịt heo lu, rau sống)</li>
+                        <li>☐ Vệ sinh quầy bán hàng và dụng cụ</li>
+                        <li>☐ Sắp xếp trưng bày nguyên liệu</li>
+                        <li>☐ Kiểm tra lò nướng và thiết bị</li>
+                        <li>☐ Chuẩn bị nước sốt và đồ chua</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>Trong ca làm việc:</h3>
+                    <ul>
+                        <li>☐ Chào hỏi khách hàng thân thiện</li>
+                        <li>☐ Chế biến bánh mì theo đúng quy trình</li>
+                        <li>☐ Vệ sinh tay trước khi chế biến</li>
+                        <li>☐ Kiểm tra chất lượng sản phẩm trước khi giao</li>
+                        <li>☐ Thu gom rác và vệ sinh liên tục</li>
+                    </ul>
+                </div>
+
+                <h2>🌆 Ca chiều (14:00 - 22:00)</h2>
+                <div class="highlight-box">
+                    <h3>Bàn giao ca:</h3>
+                    <ul>
+                        <li>☐ Kiểm tra tình trạng nguyên liệu còn lại</li>
+                        <li>☐ Bổ sung nguyên liệu nếu cần</li>
+                        <li>☐ Vệ sinh lại quầy hàng</li>
+                        <li>☐ Báo cáo tình hình ca trước</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>Kết thúc ca:</h3>
+                    <ul>
+                        <li>☐ Vệ sinh tổng thể khu vực làm việc</li>
+                        <li>☐ Kiểm kê nguyên liệu còn lại</li>
+                        <li>☐ Tắt thiết bị điện</li>
+                        <li>☐ Báo cáo doanh thu</li>
+                        <li>☐ Khóa cửa an toàn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Kỹ năng phục vụ khách hàng -->
+        <div class="slide">
+            <div class="slide-title">Kỹ năng phục vụ khách hàng</div>
+            <div class="slide-content">
+                <h2>😊 Giao tiếp và thái độ phục vụ</h2>
+                
+                <div class="action-step">
+                    <h3>Chào khách hàng:</h3>
+                    <p><strong>2 hành động:</strong></p>
+                    <ul>
+                        <li>Mở to mắt nhìn về phía khách</li>
+                        <li>Miệng cười để lộ 4 răng cửa</li>
+                    </ul>
+                    <div class="speech-bubble">
+                        <p><strong>2 câu nói:</strong></p>
+                        <p>"Em chào anh/chị ạ. Anh/chị mua bánh 25k hay 30k ạ?"</p>
+                    </div>
+                </div>
+
+                <div class="action-step">
+                    <h3>Nhận đơn hàng:</h3>
+                    <p><strong>3 hành động:</strong></p>
+                    <ul>
+                        <li>Gật đầu xác nhận</li>
+                        <li>Lấy bánh mì từ giỏ</li>
+                        <li>Đặt bánh lên bàn chuẩn bị</li>
+                    </ul>
+                    <div class="speech-bubble">
+                        <p><strong>1 câu nói:</strong></p>
+                        <p>"Dạ, em làm ngay cho anh/chị ạ!"</p>
+                    </div>
+                </div>
+
+                <div class="action-step">
+                    <h3>Giao sản phẩm:</h3>
+                    <p><strong>2 hành động:</strong></p>
+                    <ul>
+                        <li>Đưa bánh mì bằng hai tay</li>
+                        <li>Cúi đầu nhẹ khi giao</li>
+                    </ul>
+                    <div class="speech-bubble">
+                        <p><strong>3 câu nói:</strong></p>
+                        <p>"Bánh mì của anh/chị đây ạ. Tổng cộng [số tiền] ạ. Em cảm ơn anh/chị!"</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Nguyên tắc vàng trong phục vụ:</h3>
+                    <ul>
+                        <li>Luôn mỉm cười và thân thiện</li>
+                        <li>Lắng nghe và đáp ứng yêu cầu khách hàng</li>
+                        <li>Nhanh chóng và chính xác</li>
+                        <li>Giữ vệ sinh cá nhân sạch sẽ</li>
+                        <li>Xử lý khiếu nại một cách lịch sự</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Vệ sinh an toàn thực phẩm -->
+        <div class="slide">
+            <div class="slide-title">Vệ sinh an toàn thực phẩm</div>
+            <div class="slide-content">
+                <h2>🧼 Vệ sinh cá nhân</h2>
+                <ul>
+                    <li>Rửa tay sạch sẽ trước khi chế biến</li>
+                    <li>Đeo khẩu trang khi làm việc</li>
+                    <li>Mặc đồng phục sạch sẽ, gọn gàng</li>
+                    <li>Cắt móng tay ngắn, không sơn móng</li>
+                    <li>Buộc tóc gọn gàng, đội mũ (nếu có)</li>
+                </ul>
+
+                <h2>🏪 Vệ sinh khu vực làm việc</h2>
+                <ul>
+                    <li>Lau dọn quầy hàng sau mỗi lần phục vụ</li>
+                    <li>Vệ sinh dụng cụ chế biến thường xuyên</li>
+                    <li>Thu gom rác thải đúng nơi quy định</li>
+                    <li>Giữ khu vực chế biến khô ráo, sạch sẽ</li>
+                    <li>Kiểm tra và vệ sinh thiết bị định kỳ</li>
+                </ul>
+
+                <h2>🥘 An toàn thực phẩm</h2>
+                <div class="highlight-box">
+                    <h3>Nguyên tắc bảo quản:</h3>
+                    <ul>
+                        <li>Kiểm tra hạn sử dụng nguyên liệu</li>
+                        <li>Bảo quản thực phẩm ở nhiệt độ phù hợp</li>
+                        <li>Tách biệt thực phẩm sống và chín</li>
+                        <li>Sử dụng nguyên liệu theo nguyên tắc "vào trước, ra trước"</li>
+                        <li>Không sử dụng nguyên liệu có dấu hiệu hỏng</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Nội quy cửa hàng -->
+        <div class="slide">
+            <div class="slide-title">Nội quy cửa hàng</div>
+            <div class="slide-content">
+                <h2>⏰ Thời gian làm việc</h2>
+                <ul>
+                    <li>Ca sáng: 6:00 - 14:00</li>
+                    <li>Ca chiều: 14:00 - 22:00</li>
+                    <li>Có mặt đúng giờ, không được đi muộn</li>
+                    <li>Báo trước ít nhất 2 tiếng nếu có việc đột xuất</li>
+                </ul>
+
+                <h2>👔 Trang phục và hình thức</h2>
+                <ul>
+                    <li>Mặc đồng phục được cung cấp</li>
+                    <li>Giữ trang phục sạch sẽ, gọn gàng</li>
+                    <li>Đeo thẻ tên khi làm việc</li>
+                    <li>Không được mặc trang sức cầu kỳ</li>
+                </ul>
+
+                <h2>📱 Sử dụng điện thoại</h2>
+                <ul>
+                    <li>Không sử dụng điện thoại cá nhân trong giờ làm việc</li>
+                    <li>Chỉ nhận cuộc gọi khẩn cấp</li>
+                    <li>Không chụp ảnh, quay video trong cửa hàng</li>
+                </ul>
+
+                <h2>🚫 Các hành vi bị nghiêm cấm</h2>
+                <div class="highlight-box">
+                    <ul>
+                        <li>Ăn uống trong khu vực chế biến</li>
+                        <li>Hút thuốc trong cửa hàng</li>
+                        <li>Nói chuyện riêng với khách hàng</li>
+                        <li>Mang thức ăn ra ngoài không được phép</li>
+                        <li>Tiết lộ công thức và bí quyết kinh doanh</li>
+                    </ul>
+                </div>
+
+                <h2>💰 Chế độ lương thưởng</h2>
+                <ul>
+                    <li>Lương cơ bản + thưởng doanh số</li>
+                    <li>Thưởng thêm cho nhân viên xuất sắc</li>
+                    <li>Trừ lương nếu vi phạm nội quy</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9: Kết luận -->
+        <div class="slide">
+            <div class="slide-title">Kết luận</div>
+            <div class="slide-content">
+                <div class="text-center">
+                    <div class="highlight-box">
+                        <h2>🎯 Những điều cần nhớ</h2>
+                        <ul class="text-left">
+                            <li>Chất lượng sản phẩm là yếu tố quyết định sự thành công</li>
+                            <li>Tuân thủ quy trình vận hành và checklist công việc hàng ngày</li>
+                            <li>Kỹ năng phục vụ khách hàng chuyên nghiệp tạo nên trải nghiệm tích cực</li>
+                            <li>Vệ sinh an toàn thực phẩm và tuân thủ nội quy là nền tảng cho sự phát triển bền vững</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-orange-500 text-white p-8 rounded-lg mt-8">
+                        <h2 class="text-3xl font-bold mb-4">🌟</h2>
+                        <p class="text-xl font-bold">Mỗi nhân viên là đại sứ thương hiệu của Bánh mì Heo lu giòn tan!</p>
+                    </div>
+
+                    <div class="mt-8 text-gray-600">
+                        <p>Cảm ơn bạn đã tham gia chương trình đào tạo!</p>
+                        <p>Chúc bạn thành công trong công việc!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ngăn chặn right-click và các phím tắt
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // Ngăn chặn Ctrl+S, Ctrl+P, F12, etc.
+            if (e.ctrlKey && (e.keyCode === 83 || e.keyCode === 80)) {
+                e.preventDefault();
+            }
+            if (e.keyCode === 123) { // F12
+                e.preventDefault();
+            }
+        });
+
+        // Ngăn chặn drag and drop
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
+
