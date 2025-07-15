@@ -17,6 +17,35 @@
         .nav-link:hover {
             color: #FF9933;
         }
+        .hero-title {
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero-subtitle {
+            color: #FFF3E0;
+        }
+        .section-title {
+            color: #FF5722;
+            font-weight: bold;
+        }
+        .card-title {
+            color: #FF5722;
+            font-weight: bold;
+        }
+        .card-text {
+            color: #424242;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF9933 0%, #FF5722 100%);
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 87, 34, 0.3);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -55,8 +84,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero-bg text-white py-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-6">Cửa hàng Bánh mì Heo lu giòn tan</h1>
-            <p class="text-xl mb-8">Tài liệu đào tạo và hướng dẫn vận hành chuyên nghiệp</p>
+            <h1 class="text-5xl font-bold mb-6 hero-title">Cửa hàng Bánh mì Heo lu giòn tan</h1>
+            <p class="text-xl mb-8 hero-subtitle">Tài liệu đào tạo và hướng dẫn vận hành chuyên nghiệp</p>
             <div class="flex justify-center space-x-4">
                 <a href="#documents" class="bg-white text-orange-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
                     <i class="fas fa-file-alt mr-2"></i>Xem tài liệu
@@ -72,7 +101,7 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tại sao chọn chúng tôi?</h2>
+                <h2 class="text-3xl font-bold section-title mb-4">Tại sao chọn chúng tôi?</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Chúng tôi cung cấp hệ thống tài liệu đào tạo toàn diện, giúp nhân viên nắm vững quy trình và kỹ năng cần thiết.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
@@ -80,22 +109,22 @@
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-utensils text-2xl text-orange-500"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Chất lượng cao</h3>
-                    <p class="text-gray-600">Nguyên liệu tươi ngon, quy trình chế biến chuẩn, đảm bảo hương vị đặc trưng.</p>
+                    <h3 class="text-xl font-semibold mb-3 card-title">Chất lượng cao</h3>
+                    <p class="card-text">Nguyên liệu tươi ngon, quy trình chế biến chuẩn, đảm bảo hương vị đặc trưng.</p>
                 </div>
                 <div class="text-center p-6 rounded-lg border hover:shadow-lg transition duration-300">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-users text-2xl text-orange-500"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Đào tạo chuyên nghiệp</h3>
-                    <p class="text-gray-600">Hệ thống đào tạo toàn diện từ kỹ năng phục vụ đến quy trình vận hành.</p>
+                    <h3 class="text-xl font-semibold mb-3 card-title">Đào tạo chuyên nghiệp</h3>
+                    <p class="card-text">Hệ thống đào tạo toàn diện từ kỹ năng phục vụ đến quy trình vận hành.</p>
                 </div>
                 <div class="text-center p-6 rounded-lg border hover:shadow-lg transition duration-300">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-shield-alt text-2xl text-orange-500"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">An toàn vệ sinh</h3>
-                    <p class="text-gray-600">Tuân thủ nghiêm ngặt các quy định về vệ sinh an toàn thực phẩm.</p>
+                    <h3 class="text-xl font-semibold mb-3 card-title">An toàn vệ sinh</h3>
+                    <p class="card-text">Tuân thủ nghiêm ngặt các quy định về vệ sinh an toàn thực phẩm.</p>
                 </div>
             </div>
         </div>
@@ -105,16 +134,16 @@
     <section id="documents" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tài liệu hướng dẫn</h2>
+                <h2 class="text-3xl font-bold section-title mb-4">Tài liệu hướng dẫn</h2>
                 <p class="text-gray-600">Tải xuống các tài liệu cần thiết cho việc vận hành cửa hàng</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-white p-6 rounded-lg shadow-md card-hover">
                     <div class="text-center">
                         <i class="fas fa-cogs text-4xl text-orange-500 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-3">Quy trình vận hành</h3>
-                        <p class="text-gray-600 text-sm mb-4">Hướng dẫn chi tiết các bước vận hành cửa hàng từ mở cửa đến đóng cửa</p>
-                        <a href="quy_trinh_van_hanh.html" class="inline-block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
+                        <h3 class="text-lg font-semibold mb-3 card-title">Quy trình vận hành</h3>
+                        <p class="card-text text-sm mb-4">Hướng dẫn chi tiết các bước vận hành cửa hàng từ mở cửa đến đóng cửa</p>
+                        <a href="quy_trinh_van_hanh.html" class="inline-block btn-primary px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
                             <i class="fas fa-eye mr-2"></i>Xem trực tiếp
                         </a>
                     </div>
@@ -122,9 +151,9 @@
                 <div class="bg-white p-6 rounded-lg shadow-md card-hover">
                     <div class="text-center">
                         <i class="fas fa-clipboard-check text-4xl text-orange-500 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-3">Checklist hàng ngày</h3>
-                        <p class="text-gray-600 text-sm mb-4">Danh sách kiểm tra công việc cần thực hiện trong mỗi ca làm việc</p>
-                        <a href="checklist.html" class="inline-block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
+                        <h3 class="text-lg font-semibold mb-3 card-title">Checklist hàng ngày</h3>
+                        <p class="card-text text-sm mb-4">Danh sách kiểm tra công việc cần thực hiện trong mỗi ca làm việc</p>
+                        <a href="checklist.html" class="inline-block btn-primary px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
                             <i class="fas fa-eye mr-2"></i>Xem trực tiếp
                         </a>
                     </div>
@@ -132,9 +161,9 @@
                 <div class="bg-white p-6 rounded-lg shadow-md card-hover">
                     <div class="text-center">
                         <i class="fas fa-graduation-cap text-4xl text-orange-500 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-3">Nội dung đào tạo</h3>
-                        <p class="text-gray-600 text-sm mb-4">Chương trình đào tạo toàn diện cho nhân viên mới và hiện tại</p>
-                        <a href="noi_dung_dao_tao.html" class="inline-block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
+                        <h3 class="text-lg font-semibold mb-3 card-title">Nội dung đào tạo</h3>
+                        <p class="card-text text-sm mb-4">Chương trình đào tạo toàn diện cho nhân viên mới và hiện tại</p>
+                        <a href="noi_dung_dao_tao.html" class="inline-block btn-primary px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
                             <i class="fas fa-eye mr-2"></i>Xem trực tiếp
                         </a>
                     </div>
@@ -142,9 +171,9 @@
                 <div class="bg-white p-6 rounded-lg shadow-md card-hover">
                     <div class="text-center">
                         <i class="fas fa-gavel text-4xl text-orange-500 mb-4"></i>
-                        <h3 class="text-lg font-semibold mb-3">Nội quy cửa hàng</h3>
-                        <p class="text-gray-600 text-sm mb-4">Các quy định và nội quy cần tuân thủ khi làm việc tại cửa hàng</p>
-                        <a href="noi_quy_cua_hang.html" class="inline-block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
+                        <h3 class="text-lg font-semibold mb-3 card-title">Nội quy cửa hàng</h3>
+                        <p class="card-text text-sm mb-4">Các quy định và nội quy cần tuân thủ khi làm việc tại cửa hàng</p>
+                        <a href="noi_quy_cua_hang.html" class="inline-block btn-primary px-4 py-2 rounded hover:bg-orange-600 transition duration-300" target="_blank">
                             <i class="fas fa-eye mr-2"></i>Xem trực tiếp
                         </a>
                     </div>
